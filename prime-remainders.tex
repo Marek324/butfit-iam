@@ -1,0 +1,62 @@
+\documentclass[fontsize=12pt]{article}
+\usepackage{amsmath}
+\usepackage{hyperref} 
+\usepackage{fontsize}
+\usepackage[margin=2cm]{geometry}
+
+\title{IAM druhý domáci úkol - Krteček}
+\author{Marek Hric xhricma00}
+\date{27 April 2025}
+
+\begin{document}
+
+\maketitle
+\fontsize{12pt}{14.4}
+
+\section{Problém}
+Při dělení jistého přirozeného čísla čísly 20 a 25 vyjdou jako zbytky prvočísla. Součet obou neúplných podílů se rovná 2025. Určete dělené číslo. Najděte všechna řešení.
+
+\section{Pomocné zápisy}
+\textbf{Prvočísla:}\\
+$\-$\quad$\mathcal{P}=\{\forall p\in\mathcal{N}: (p>1)\wedge \forall d\in\mathcal{N}: (d\vert p\Rightarrow(d=1 \lor d=p)) \}$
+\\
+\textbf{Delenie so zvyškom:}\\
+$\-$\quad$x\div y=z$ mod $r\Leftrightarrow x=y\cdot z+r$
+
+\section{Prepis problému}
+$x=20\cdot a+p_1=25\cdot b+p_2\wedge a+b=2025$ $;$ $x,a,b\in \mathcal{N}\wedge p_1,p_2\in \mathcal{P}$\\
+Všeobecne:\\
+$x=d_1\cdot a+p_1=d_2\cdot b+p_2\wedge a+b=n$ $;$ $x,a,b,d_1,d_2,n\in \mathcal{N}\wedge p_1,p_2\in \mathcal{P}$
+
+\section{Riešenie}
+\subsection{Obmedzenia}
+Zo zadania vyplývajú tieto obmedzenia: 
+\begin{itemize}
+    \item $n,a,b,d_1,d_2\in\mathcal{N}$
+    \item $p_1,p_2\in\mathcal{P}$
+    \item $p_1\in\{\forall p\in\mathcal{P}: p < d_1\}$
+    \item $p_2\in\{\forall p\in\mathcal{P}: p < d_2\}$
+\end{itemize}
+$d_1\cdot a + p_1 = d_2\cdot b + p_2 \Leftrightarrow
+d_1\cdot a - d_2\cdot b = p_2 - p_1$\\
+$d = GCD(d_1, d_2)$\\
+$dd_1 = d_1\div d$\\
+$dd_2 = d_2\div d$\\
+$d\div (dd_1\cdot a - dd_2\cdot b) = p_2 - p_1 \Leftrightarrow
+dd_1\cdot a - dd_2\cdot b = \dfrac{p_2 - p_1}{d} \Rightarrow$ 
+\underline{$GCD(d_1, d_2)\vert (p_2 - p_1)$}
+
+\subsection{Výpočet}
+Výpočet je riešený python scriptom, ktorý berie do úvahy tieto obmedzenia a hľadá riešenia.
+Tento script je dostupný na:
+\\\href{https://github.com/Marek324/butfit-iam/blob/master/prime-remainders.py}{https://github.com/Marek324/butfit-iam/blob/master/prime-remainders.py}.
+
+\subsection{Výsledok}
+Zadaním zadané hodnoty:\\
+$n = 2025$\\
+$d_1 = 20$\\
+$d_2 = 25$\\
+Výsledok:\\
+$\{22502, 22503, 22505, 22507, 22511, 22513, 22517, 22519\}$\\
+\\\\Jednoduchým pozorovaním si môžeme všimnúť že všetky výsledky sú 22500 + prvočísla $<2-19>$, preto som sa skúšal zamyslieť nad nejakým vzorcom, ktorým by sme tento príklad mohli riešiť, ktorý som síce pre tento vstup dokázal nájsť, nanešťastie ale všeobecne nefunguje.  
+\end{document}
