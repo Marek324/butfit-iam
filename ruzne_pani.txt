@@ -1,0 +1,8 @@
+Na hradě Okoři žije Bílá Paní, která vždy mluví pravdu, a Lehce Šedivá Paní, která vždy lže. Jsou jen velmi těžko rozeznatelné. Při hledání cesty z hradu stojíte na křižovatce dvou cest, když se zjeví jedna z Paní. Na jakou jednu otázku se jí zeptat, aby z odpovědi bylo jasné, která cesta vede k východu? 
+
+"Keby som sa opýtal tej druhej paní, ktorou cestou sa mám vydať, aby som našiel východ čo by mi povedala?"
+
+Biela: Ukázala by na zlú cestu, keďže by simulavala klamstvo šedej.
+Šedá: Ukázala by na zlú cestu, keďže biela paní hovorí pravdu a ona klame.
+
+Potom sa len treba vydať druhou cestou.
